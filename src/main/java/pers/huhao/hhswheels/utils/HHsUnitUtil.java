@@ -1,12 +1,15 @@
 package pers.huhao.hhswheels.utils;
 
 
+import java.util.concurrent.TimeUnit;
+
 public class HHsUnitUtil {
 
-    private final static String UNIT_MINUTE = "分钟";
+    public static Long secondsConvertMinute(Long second) {
+        return TimeUnit.SECONDS.toMinutes(second);
+    }
 
-    public static String secondConvertMinute(Long second) {
-        long minute = second % 3600L / 60L;
-        return minute + UNIT_MINUTE;
+    public static Long millisecondsConvertMinute(Long milliseconds) {
+        return TimeUnit.MILLISECONDS.toMinutes(milliseconds);
     }
 }
